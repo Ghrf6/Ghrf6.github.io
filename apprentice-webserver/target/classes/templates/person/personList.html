@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person List</title>
+</head>
+<body>
+<table>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Spitzname</th>
+    <th>Address</th>
+    <th>Postal code</th>
+    <th>Nationalität</th>
+    <th>Geburtsort</th>
+    <th>Geburtsdatum</th>
+    <th>Sport</th>
+    <th>Einzelsport</th>
+    <th>TeamSport</th>
+    <th>Mutter</th>
+    <th>Vater</th>
+
+
+    <tr th:each="person : ${personList}">
+        <td th:text="${person.name}"></td>
+        <td th:text="${person.surname}"></td>
+        <td th:text="${person.nickname}"></td>
+        <td th:text="${person.address}"></td>
+        <td th:text="${person.postalCode}"></td>
+        <td th:text="${person.nationality}"></td>
+        <td th:text="${person.birthplace}"></td>
+        <td th:text="${person.date}"></td>
+        <td th:text="${person.hobby.sportname}"></td>
+        <td th:text="${person.hobby.individualSport}"></td>
+        <td th:text="${person.hobby.teamSport}"></td>
+<!--        <td th:text="${person.father.surname}"></td>-->
+        <td th:if="${person.mother == null}">-</td>
+        <td th:unless="${person.mother == null}" th:text="${person.mother.surname}"></td>
+        <td th:if="${person.father == null}">-</td>
+        <td th:unless="${person.father == null}" th:text="${person.father.surname}"></td>
+    </tr>
+</table>
+
+<a href="/person">add a other person</a>
+</body>
+</html>
