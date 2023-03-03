@@ -1,0 +1,2 @@
+INSERT INTO person (name, surname, city, address, postalCode) VALUES ('Bela', 'Horvath', 'Schaffhausen', 'Insert Address here', 8200);
+INSERT INTO person (name, surname, city, address, postalCode) VALUES ('Someone', 'Else', 'Winterthur', 'Here and there', 8200);

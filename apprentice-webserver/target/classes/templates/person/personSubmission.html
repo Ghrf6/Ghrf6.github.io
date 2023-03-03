@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person add confirmation</title>
+</head>
+<body>
+<h1>Result</h1>
+<h2>Person</h2>
+<p th:text="'Name: ' + ${person.name}"></p>
+<p th:text="'Surname: ' + ${person.surname}"></p>
+<p th:text="'Spitzname: '+ ${person.nickname}"></p>
+<p th:text="'Address: ' + ${person.address}"></p>
+<p th:text="'Postal code: ' + ${person.postalCode}"></p>
+<p th:text=" 'Nationalität: ' + ${person.nationality}"></p>
+<p th:text=" 'Geburtsort: ' + ${person.birthplace}"></p>
+<p th:text="'Geburtsdatum: ' +${person.date}"></p>
+<h2>Hobby</h2>
+<p th:text="'Sport: ' +${person.hobby.sportname}"></p>
+<p th:text="'Einzelsport: ' +${person.hobby.individualSport}"></p>
+<p th:text="'Teamsport: ' +${person.hobby.teamSport}"></p>
+<span th:if="${person.mother == null}"><p>Mutter: -</p></span>
+<span th:unless="${person.mother == null}"><p th:text="'Mutter: ' +${person.mother.surname}"></p></span>
+<span th:if="${person.father == null}"><p>Vater: -</p></span>
+<span th:unless="${person.father == null}"><p th:text="'Vater: ' +${person.father.surname}"></p></span>
+
+<a href="/">home</a>
+</body>
+</html>
